@@ -40,3 +40,5 @@ SELECT name
  SELECT capital, name FROM world WHERE capital LIKE concat('%', name, '%')
 
  SELECT capital, name FROM world WHERE capital LIKE concat(name, '_%')
+
+ SELECT name, REPLACE(capital, name, '') AS extension FROM world WHERE capital LIKE concat(name, '_%')
