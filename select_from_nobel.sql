@@ -19,3 +19,9 @@ SELECT yr, subject, winner FROM nobel WHERE yr = 1980 AND NOT(subject = 'Chemist
 SELECT yr, subject, winner FROM nobel WHERE (subject = 'Medicine' AND yr < 1910) OR (subject = 'Literature' AND yr >= 2004);
 
 SELECT * FROM nobel WHERE winner = 'PETER GRÜNBERG';
+
+SELECT * FROM nobel WHERE winner = 'EUGENE O''NEILL'
+
+SELECT winner, yr, subject FROM nobel WHERE winner LIKE 'Sir%' ORDER BY yr DESC, winner;
+
+SELECT winner, subject FROM nobel WHERE yr=1984 ORDER BY CASE WHEN subject IN ('Chemistry','Physics') THEN 1 ELSE 0 END, subject, winner
